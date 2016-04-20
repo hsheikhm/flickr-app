@@ -5,7 +5,9 @@
         <div class="photo-box">
           <img ng-src="{{post.media.m}}" alt="Photo for post" class="post-photo">
         </div>
-        <h4>{{post.title}}</h3>
+        <h4 class="post-title">{{post.title}}</h4>
+        <a href="https://www.flickr.com/people/{{post.author_id}}" class="post-author">{{post.author}}</a>
+        <span class="post-date">{{feed.formatDate(post.published)}}</span>
       </a>
     </article>
   </div>

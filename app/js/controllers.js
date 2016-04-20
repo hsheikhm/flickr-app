@@ -9,5 +9,10 @@ flickrAppControllers.controller('FeedCtrl', ['Feed',
       self.list = response.data.items;
     });
 
+    self.formatDate = function(dateString){
+      var date = new Date(dateString);
+      console.log(date.toDateString());
+    };
+
   }
 ]);
