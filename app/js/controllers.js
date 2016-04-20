@@ -15,3 +15,15 @@ flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
 
   }
 ]);
+
+flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormater',
+  function($routeParams, Feed, DateFormater){
+
+    var self = this;
+
+    Feed.getAll().then(function(response){
+      self.selected = response.data.items[$routeParams.post_id];
+    });
+
+  }
+]);
