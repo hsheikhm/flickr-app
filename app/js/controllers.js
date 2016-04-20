@@ -1,7 +1,7 @@
 var flickrAppControllers = angular.module('flickrAppControllers', []);
 
-flickrAppControllers.controller('FeedCtrl', ['Feed',
-  function(Feed){
+flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
+  function(Feed, DateFormater){
 
     var self = this;
 
@@ -10,8 +10,7 @@ flickrAppControllers.controller('FeedCtrl', ['Feed',
     });
 
     self.formatDate = function(dateString){
-      var date = new Date(dateString);
-      console.log(date.toDateString());
+      return DateFormater.set(dateString);
     };
 
   }

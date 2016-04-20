@@ -19,7 +19,7 @@ flickrAppServices.factory('Feed', ['$http',
   }
 ]);
 
-flickrAppServices.factory('dateFormater', function(){
+flickrAppServices.factory('DateFormater', function(){
 
   function getSuffix(date){
     if(date > 3 && date < 21){
@@ -33,6 +33,13 @@ flickrAppServices.factory('dateFormater', function(){
     }
   }
 
+  function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+  }
+
   return {
     set: function(dateString){
       var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -41,7 +48,7 @@ flickrAppServices.factory('dateFormater', function(){
       return date.getDate() + getSuffix(date.getDate()) + " " +
               months[date.getMonth()] + " " +
               date.getFullYear() + " " +
-              "at " + date.getHours() + ":" + date.getMinutes();
+              "at " + date.getHours() + ":" + addZero(date.getMinutes());
     }
   };
 
