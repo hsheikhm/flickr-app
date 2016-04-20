@@ -1,0 +1,23 @@
+{
+  "name": "flickr-app",
+  "description": "A Flickr Feed App built in HTML, CSS, Sass and Angular JS",
+  "authors": [
+    "Hamza Sheikh"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hsheikhm/flickr-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "angular-resource": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6"
+  }
+}
