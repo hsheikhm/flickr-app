@@ -23,7 +23,12 @@ flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormat
 
     Feed.getAll().then(function(response){
       self.selected = response.data.items[$routeParams.post_id];
+      self.tags = self.selected.tags.split(' ');
     });
+
+    self.formatDate = function(dateString){
+      return DateFormater.set(dateString);
+    };
 
   }
 ]);

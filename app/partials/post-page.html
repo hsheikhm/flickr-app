@@ -1,1 +1,15 @@
-{{ post.selected.title }}
+<section class="post-section">
+  <article class="post-content">
+    <a href="{{post.selected.link}}" class="post-content-title">{{post.selected.title}}</a>
+    <a href="https://www.flickr.com/people/{{post.selected.author_id}}" class="post-content-author">{{post.selected.author}}</a>
+    <span class="post-content-date">| Published {{post.formatDate(post.selected.published)}}</span>
+    <div class="post-content-photo-box">
+      <img ng-src="{{post.selected.media.m}}" alt="Photo of post" class="post-content-photo">
+    </div>
+    <p class="post-content-desc">{{post.selected.description}}</p>
+    <p class="tags-title">Tags:</p>
+    <div class="tags-list" ng-repeat="tag in post.tags">
+      <a href="" class="tag-word">{{tag}}</a>
+    </div>
+  </article>
+</section>
