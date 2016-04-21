@@ -5,24 +5,21 @@ a
 .feed-list-section
   height: 550px
   overflow: auto
-  border: 2px solid black
+  border: $primary-border-style
   border-radius: 3px
 
 .single-photo
-  border-bottom: 2px solid black
+  border-bottom: $primary-border-style
 
 .photo-image-section
-  height: 135px
-  width: 190px
-  border-right: 2px solid black
+  +height-width(135px, 190px)
+  border-right: $primary-border-style
 
 .photo-image
-  height: 100%
-  width: 100%
+  +height-width(100%, 100%)
 
 .photo-information-section
-  width: 690px
-  height: 133px
+  +height-width(133px, 690px)
   float: right
   margin-top: -134px
 
@@ -55,6 +52,4 @@ a
   font-size: 16px
 
 .photo-link
-  padding-left: 25px
-  margin-top: 16px
-  font-size: 16px
+  @extend .photo-date
