@@ -15,7 +15,7 @@ flickrApp.config(['$routeProvider',
         controllerAs: 'feed',
         templateUrl: 'partials/home-page.html'
       }).
-      when('/home/:post_id', {
+      when('/home/post/:post_id', {
         controller: 'PostCtrl',
         controllerAs: 'post',
         templateUrl: 'partials/post-page.html'

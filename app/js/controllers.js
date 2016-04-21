@@ -16,13 +16,14 @@ flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
   }
 ]);
 
-flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormater',
-  function($routeParams, Feed, DateFormater){
+flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormater', '$sce',
+  function($routeParams, Feed, DateFormater, $sce){
 
     var self = this;
 
     Feed.getAll().then(function(response){
       self.selected = response.data.items[$routeParams.post_id];
+      self.description = $sce.trustAsHtml(self.selected.description);
       self.tags = self.selected.tags.split(' ');
     });
 

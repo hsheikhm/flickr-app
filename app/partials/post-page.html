@@ -6,7 +6,7 @@
     <div class="post-content-photo-box">
       <img ng-src="{{post.selected.media.m}}" alt="Photo of post" class="post-content-photo">
     </div>
-    <p class="post-content-desc">{{post.selected.description}}</p>
+    <div class="post-content-description" ng-bind-html="post.description"></div>
     <p class="tags-title">Tags:</p>
     <div class="tags-list" ng-repeat="tag in post.tags">
       <a href="" class="tag-word">{{tag}}</a>
