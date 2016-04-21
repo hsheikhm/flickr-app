@@ -1,27 +1,31 @@
-var flickrApp = angular.module('flickrApp', [
-  'ngRoute',
-  'ngResource',
-  'ngAnimate',
-  'flickrAppControllers',
-  'flickrAppServices',
-  'flickrAppDirectives'
-]);
+(function(){
+  "use strict";
 
-flickrApp.config(['$routeProvider',
-  function($routeProvider){
-    $routeProvider.
-      when('/home', {
-        controller: 'FeedCtrl',
-        controllerAs: 'feed',
-        templateUrl: 'partials/home-page.html'
-      }).
-      when('/home/post/:post_id', {
-        controller: 'PostCtrl',
-        controllerAs: 'post',
-        templateUrl: 'partials/post-page.html'
-      }).
-      otherwise({
-        redirectTo: '/home'
-      });
-  }
-]);
+  var flickrApp = angular.module('flickrApp', [
+    'ngRoute',
+    'ngResource',
+    'ngAnimate',
+    'flickrAppControllers',
+    'flickrAppServices',
+    'flickrAppFilters',
+    'flickrAppDirectives'
+  ]);
+
+  flickrApp.config(['$routeProvider',
+    function($routeProvider){
+      $routeProvider.
+        when('/feed', {
+          controller: 'FeedListCtrl',
+          templateUrl: 'partials/feed-list.html'
+        }).
+        when('/feed/photo/:photo_id', {
+          controller: 'PhotoCtrl',
+          templateUrl: 'partials/photo-detail.html'
+        }).
+        otherwise({
+          redirectTo: '/feed'
+        });
+    }
+  ]);
+
+}());

@@ -1,6 +1,6 @@
 var flickrAppControllers = angular.module('flickrAppControllers', []);
 
-flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
+flickrAppControllers.controller('FeedListCtrl', ['Feed', 'DateFormater',
   function(Feed, DateFormater){
 
     var self = this;
@@ -16,7 +16,7 @@ flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
   }
 ]);
 
-flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormater', '$sce',
+flickrAppControllers.controller('PhotoCtrl', ['$routeParams', 'Feed', 'DateFormater', '$sce',
   function($routeParams, Feed, DateFormater, $sce){
 
     var self = this;
