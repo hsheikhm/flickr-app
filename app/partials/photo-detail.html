@@ -8,7 +8,7 @@
         <h4 class="photo-detail-title">{{photo.title}}</h4>
       </a>
       <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-detail-author">
-        {{photo.author}}
+        {{photo.author | authorName}}
       </a>
       <span class="photo-detail-date">| Published: {{photo.published | customDateFormat}}</span>
     </div>
