@@ -19,7 +19,7 @@
           templateUrl: 'partials/feed-list.html'
         }).
         when('/feed/photo/:photo_id', {
-          controller: 'PhotoCtrl',
+          controller: 'PhotoDetailCtrl',
           templateUrl: 'partials/photo-detail.html'
         }).
         otherwise({

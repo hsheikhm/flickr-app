@@ -1,35 +1,43 @@
-var flickrAppControllers = angular.module('flickrAppControllers', []);
+(function(){
+  "use strict";
 
-flickrAppControllers.controller('FeedListCtrl', ['Feed', 'DateFormater',
-  function(Feed, DateFormater){
+  var flickrAppControllers = angular.module('flickrAppControllers', []);
 
-    var self = this;
+  flickrAppControllers.controller('FeedListCtrl', ['$scope', 'Feed', 'DateFormater',
+    function($scope, Feed, DateFormater){
 
-    Feed.getAll().then(function(response){
-      self.list = response.data.items;
-    });
+      var feed = Feed.get();
 
-    self.formatDate = function(dateString){
-      return DateFormater.set(dateString);
-    };
+      if(feed.error){
+        console.log(feed.error);
+      } else {
+        $scope.feedList = feed.data;
+      }
 
-  }
-]);
+      $scope.formatDate = function(dateString){
+        return DateFormater.set(dateString);
+      };
 
-flickrAppControllers.controller('PhotoCtrl', ['$routeParams', 'Feed', 'DateFormater', '$sce',
-  function($routeParams, Feed, DateFormater, $sce){
+    }
+  ]);
 
-    var self = this;
+  flickrAppControllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Feed', 'DateFormater',
+    function($scope, $routeParams, Feed, DateFormater){
 
-    Feed.getAll().then(function(response){
-      self.selected = response.data.items[$routeParams.post_id];
-      self.description = $sce.trustAsHtml(self.selected.description);
-      self.tags = self.selected.tags.split(' ');
-    });
+      var feed = Feed.get();
 
-    self.formatDate = function(dateString){
-      return DateFormater.set(dateString);
-    };
+      if(feed.error){
+        console.log(feed.error);
+      } else {
+        $scope.photo = feed.data[$routeParams.photo_id];
+        $scope.tags = $scope.photo.tags.split(' ');
+      }
 
-  }
-]);
+      $scope.formatDate = function(dateString){
+        return DateFormater.set(dateString);
+      };
+
+    }
+  ]);
+
+}());

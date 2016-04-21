@@ -1,1 +1,6 @@
-var flickrAppDirectives = angular.module('flickrAppDirectives', []);
+(function(){
+  "use strict";
+
+  var flickrAppDirectives = angular.module('flickrAppDirectives', []);
+
+}());
