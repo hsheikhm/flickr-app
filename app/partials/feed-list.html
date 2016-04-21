@@ -5,27 +5,24 @@
     <article class="single-photo">
 
         <div class="photo-image-section">
-          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-details-link">
+          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-detail-link">
             <img ng-src="{{photo.media.m}}" alt="{{photo.title}}" class="photo-image">
           </a>
         </div>
 
         <div class="photo-information-section">
-          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-details-link">
+          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-detail-link">
             <h4 class="photo-title">{{photo.title}}</h4>
           </a>
 
           <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-author">{{photo.author}}</a>
 
-          <span class="photo-date">Published {{photo.published | customDateFormat}}</span>
+          <span class="photo-date">Published: {{photo.published | customDateFormat}}</span>
 
           <a href="{{photo.link}}" title="See photo on Flickr" class="photo-link">View on Flickr</a>
         </div>
 
     </article>
-    <br>
-    <br>
-    <br>
 
   </div>
 

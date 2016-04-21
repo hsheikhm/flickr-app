@@ -20,14 +20,14 @@
   flickrAppControllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Feed',
     function($scope, $routeParams, Feed){
 
-      var feed = Feed.get();
-
-      // if(feed.error){
-      //   console.log(feed.error);
-      // } else {
-      //   $scope.photo = feed.data[$routeParams.photo_id];
-      //   $scope.tags = $scope.photo.tags.split(' ');
-      // }
+      Feed.get()
+        .success(function(response){
+          $scope.photo = response.items[$routeParams.photo_id];
+          $scope.photoTags = $scope.photo.tags.split(' ');
+        })
+        .error(function(response){
+          console.log("There was an error while fetching the feed");
+        });
 
     }
   ]);
