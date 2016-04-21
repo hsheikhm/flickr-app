@@ -3,20 +3,16 @@
 
   var flickrAppControllers = angular.module('flickrAppControllers', []);
 
-  flickrAppControllers.controller('FeedListCtrl', ['$scope', 'Feed', 'DateFormater',
-    function($scope, Feed, DateFormater){
+  flickrAppControllers.controller('FeedListCtrl', ['$scope', 'Feed',
+    function($scope, Feed){
 
-      var feed = Feed.get();
-
-      if(feed.error){
-        console.log(feed.error);
-      } else {
-        $scope.feedList = feed.data;
-      }
-
-      // $scope.formatDate = function(dateString){
-      //   return DateFormater.set(dateString);
-      // };
+      Feed.get()
+        .success(function(response){
+          $scope.feedList = response.items;
+        })
+        .error(function(response){
+          console.log("There was an error while fetching the feed");
+        });
 
     }
   ]);
@@ -26,16 +22,12 @@
 
       var feed = Feed.get();
 
-      if(feed.error){
-        console.log(feed.error);
-      } else {
-        $scope.photo = feed.data[$routeParams.photo_id];
-        $scope.tags = $scope.photo.tags.split(' ');
-      }
-
-      // $scope.formatDate = function(dateString){
-      //   return DateFormater.set(dateString);
-      // };
+      // if(feed.error){
+      //   console.log(feed.error);
+      // } else {
+      //   $scope.photo = feed.data[$routeParams.photo_id];
+      //   $scope.tags = $scope.photo.tags.split(' ');
+      // }
 
     }
   ]);

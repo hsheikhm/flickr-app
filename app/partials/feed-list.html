@@ -1,19 +1,32 @@
-<section class="feed-section">
-  <div class="feed-list" ng-repeat="post in feed.list">
-    <article class="single-post">
-      <a href="#/feed/photo/{{feed.list.indexOf(post)}}">
-        <div class="photo-box">
-          <img ng-src="{{post.media.m}}" alt="Photo of post" class="post-photo">
+<section class="feed-list-section">
+
+  <div class="feed-list" ng-repeat="photo in feedList">
+
+    <article class="single-photo">
+
+        <div class="photo-image-section">
+          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-details-link">
+            <img ng-src="{{photo.media.m}}" alt="{{photo.title}}" class="photo-image">
+          </a>
         </div>
-        <h4 class="post-title">{{post.title}}</h4>
-        <a href="https://www.flickr.com/people/{{post.author_id}}" class="post-author">{{post.author}}</a>
-        <span class="post-date">Published {{feed.formatDate(post.published)}}</span>
-        <a href="{{post.link}}" class="post-link">View on Flickr</a>
-      </a>
+
+        <div class="photo-information-section">
+          <a href="#/feed/photo/{{feedList.indexOf(photo)}}" title="See photo details" class="photo-details-link">
+            <h4 class="photo-title">{{photo.title}}</h4>
+          </a>
+
+          <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-author">{{photo.author}}</a>
+
+          <span class="photo-date">Published {{photo.published | customDateFormat}}</span>
+
+          <a href="{{photo.link}}" title="See photo on Flickr" class="photo-link">View on Flickr</a>
+        </div>
+
     </article>
     <br>
     <br>
     <br>
-    <br>
+
   </div>
+
 </section>

@@ -10,15 +10,10 @@
 
       return {
         get: function(){
-          $http.jsonp(feedUrl)
-            .success(function(response){
-              return { data: response.data.items };
-            })
-            .error(function(response){
-              return { error: "There was an error while fetching the feed" };
-            });
+          return $http.jsonp(feedUrl);
         }
       };
+
     }
   ]);
 
