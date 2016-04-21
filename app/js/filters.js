@@ -36,4 +36,12 @@
 
   });
 
+  flickrAppFilters.filter("authorName", function(){
+
+    return function(name){
+      return name.slice(19, -1);
+    };
+
+  });
+
 }());
