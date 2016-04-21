@@ -15,11 +15,15 @@
             <h4 class="photo-title">{{photo.title}}</h4>
           </a>
 
-          <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-author">{{photo.author | authorName}}</a>
+          <div class="photo-info-row">
+            <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-author-link">
+              <p class="photo-author">{{photo.author | authorName}}</p>
+            </a>
 
-          <span class="photo-date">Published: {{photo.published | customDateFormat}}</span>
+            <span class="photo-date">Published: {{photo.published | customDateFormat}}</span>
 
-          <a href="{{photo.link}}" title="See photo on Flickr" class="photo-link">View on Flickr</a>
+            <a href="{{photo.link}}" title="See photo on Flickr" class="photo-link">View on Flickr</a>
+          </div>
         </div>
 
     </article>
