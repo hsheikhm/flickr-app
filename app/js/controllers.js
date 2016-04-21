@@ -14,15 +14,15 @@
         $scope.feedList = feed.data;
       }
 
-      $scope.formatDate = function(dateString){
-        return DateFormater.set(dateString);
-      };
+      // $scope.formatDate = function(dateString){
+      //   return DateFormater.set(dateString);
+      // };
 
     }
   ]);
 
-  flickrAppControllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Feed', 'DateFormater',
-    function($scope, $routeParams, Feed, DateFormater){
+  flickrAppControllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Feed',
+    function($scope, $routeParams, Feed){
 
       var feed = Feed.get();
 
@@ -33,9 +33,9 @@
         $scope.tags = $scope.photo.tags.split(' ');
       }
 
-      $scope.formatDate = function(dateString){
-        return DateFormater.set(dateString);
-      };
+      // $scope.formatDate = function(dateString){
+      //   return DateFormater.set(dateString);
+      // };
 
     }
   ]);
