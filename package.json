@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "A Flickr Feed App built in HTML, CSS, Sass and Angular JS",
   "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
     "start": "http-server -a 0.0.0.0 -p 8000",
+    "pretest": "npm install",
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "preprotractor": "npm run update-webdriver",
     "protractor": "protractor test/protractor-conf.js",
+    "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update"
   },
   "devDependencies": {

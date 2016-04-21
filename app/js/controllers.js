@@ -1,29 +1,35 @@
-var flickrAppControllers = angular.module('flickrAppControllers', []);
+(function(){
+  "use strict";
 
-flickrAppControllers.controller('FeedCtrl', ['Feed', 'DateFormater',
-  function(Feed, DateFormater){
+  var flickrAppControllers = angular.module('flickrAppControllers', []);
 
-    var self = this;
+  flickrAppControllers.controller('FeedListCtrl', ['$scope', 'Feed',
+    function($scope, Feed){
 
-    Feed.getAll().then(function(response){
-      self.list = response.data.items;
-    });
+      Feed.get()
+        .success(function(response){
+          $scope.feedList = response.items;
+        })
+        .error(function(response){
+          console.log("There was an error while fetching the feed");
+        });
 
-    self.formatDate = function(dateString){
-      return DateFormater.set(dateString);
-    };
+    }
+  ]);
 
-  }
-]);
+  flickrAppControllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Feed',
+    function($scope, $routeParams, Feed){
 
-flickrAppControllers.controller('PostCtrl', ['$routeParams', 'Feed', 'DateFormater',
-  function($routeParams, Feed, DateFormater){
+      Feed.get()
+        .success(function(response){
+          $scope.photo = response.items[$routeParams.photo_id];
+          $scope.photoTags = $scope.photo.tags.split(' ');
+        })
+        .error(function(response){
+          console.log("There was an error while fetching the feed");
+        });
 
-    var self = this;
+    }
+  ]);
 
-    Feed.getAll().then(function(response){
-      self.selected = response.data.items[$routeParams.post_id];
-    });
-
-  }
-]);
+}());

@@ -1,0 +1,41 @@
+<section class="photo-detail-section">
+
+  <article class="photo-detail">
+
+    <div class="photo-detail-top-section">
+      <a href="#/feed" title="Go back" class="back-link">Back</a>
+      <a href="{{photo.link}}" title="See photo on Flickr" class="photo-detail-title-link">
+        <h4 class="photo-detail-title">{{photo.title}}</h4>
+      </a>
+      <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-detail-author">
+        {{photo.author}}
+      </a>
+      <span class="photo-detail-date">| Published: {{photo.published | customDateFormat}}</span>
+    </div>
+
+    <div class="photo-detail-middle-section">
+      <div class="photo-detail-image-box">
+        <img ng-src="{{photo.media.m}}" alt="{{photo.title}}" class="photo-detail-image">
+      </div>
+      <div class="photo-detail-description">
+        <p class="photo-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+
+    <div class="photo-detail-bottom-section">
+      <span class="photo-detail-tags-title">Tags:</span>
+      <div class="photo-detail-tags-list" ng-repeat="tag in photoTags">
+        <a href="#/feed" title="Filter photos by tag" class="photo-detail-tag">{{tag}}</a>
+      </div>
+    </div>
+
+  </article>
+
+</section>
