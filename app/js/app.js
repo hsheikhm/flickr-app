@@ -18,6 +18,10 @@
           controller: 'FeedListCtrl',
           templateUrl: 'partials/feed-list.html'
         }).
+        when('/feed/:tag_id', {
+          controller: 'FeedListCtrl',
+          templateUrl: 'partials/feed-list.html'
+        }).
         when('/feed/photo/:photo_id', {
           controller: 'PhotoDetailCtrl',
           templateUrl: 'partials/photo-detail.html'
