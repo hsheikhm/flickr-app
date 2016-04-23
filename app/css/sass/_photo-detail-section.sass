@@ -8,12 +8,12 @@
   float: right
   font-size: 16px
   color: #104E8B
-  border: 2px solid #104E8B
+  border: 2px solid $primary-color
   border-radius: 3px
   padding: 3px 7px 3px 6px
 
   &:hover
-    background-color: #104E8B
+    background-color: $primary-color
     color: white
 
 .back-arrow
@@ -21,7 +21,7 @@
 
 .photo-detail-title
   font-size: 27px
-  color: #104E8B
+  color: $primary-color
 
   &:hover
     color: #337ab7
@@ -51,15 +51,14 @@
   margin-right: 12px
 
 .photo-detail-bottom-section
+  +height-width(95px, 545px)
   float: right
-  width: 545px
-  height: 95px
   margin-top: -95px
   margin-right: 12px
 
 .photo-detail-tags-title
   font-weight: bold
-  color: #104E8B
+  color: $primary-color
   padding-right: 13px
 
 .photo-detail-tags-list
