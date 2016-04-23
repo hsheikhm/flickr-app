@@ -3,14 +3,18 @@
   <article class="photo-detail">
 
     <div class="photo-detail-top-section">
-      <a href="#/feed" title="Go back" class="back-link">Back</a>
+        <a href="#/feed" title="Go back" class="back-link">
+          <span class="glyphicon glyphicon-chevron-left back-arrow" aria-hidden="true"></span>
+          Back
+        </a>
       <a href="{{photo.link}}" title="See photo on Flickr" class="photo-detail-title-link">
         <h4 class="photo-detail-title">{{photo.title}}</h4>
       </a>
       <a href="https://www.flickr.com/people/{{photo.author_id}}" title="See author's page" class="photo-detail-author">
         {{photo.author | authorName}}
       </a>
-      <span class="photo-detail-date">| Published: {{photo.published | customDateFormat}}</span>
+      <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+      <span class="photo-detail-date">Published: {{photo.published | customDateFormat}}</span>
     </div>
 
     <div class="photo-detail-middle-section">
