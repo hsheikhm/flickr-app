@@ -1,6 +1,10 @@
+<div class="search-tag-box">
+  <input class="search-text" type="text" name="search-query" ng-model="tagSearch" placeholder="Search by tag">
+</div>
+
 <section class="feed-list-section">
 
-  <div class="feed-list" ng-repeat="photo in feedList">
+  <div class="feed-list" ng-repeat="photo in feedList | filter : { 'tags' : tagSearch }">
 
     <article class="single-photo">
 
