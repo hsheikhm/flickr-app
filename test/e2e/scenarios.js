@@ -50,11 +50,35 @@
         element.all(by.css('.photo-author')).first().click().then(function(){
           browser.ignoreSynchronization = true;
           browser.getCurrentUrl().then(function(url){
-            var authorID = url.slice(30, 42);
+            browser.ignoreSynchronization = false;
+            var authorID = url.slice(30);
             expect(url).toEqual('https://www.flickr.com/people/' + authorID);
           });
         });
-        browser.ignoreSynchronization = false;
+      });
+
+      it("clicking on photo's 'View on Flickr' link should take you to the photo on Flickr", function(){
+        element.all(by.css('.photo-link')).first().click().then(function(){
+          browser.ignoreSynchronization = true;
+          browser.getCurrentUrl().then(function(url){
+            browser.ignoreSynchronization = false;
+            var photoID = url.slice(30);
+            expect(url).toEqual('https://www.flickr.com/photos/' + photoID);
+          });
+        });
+      });
+
+      it("should filter the feed list as a user types into search by tag box", function(){
+        var feedList = element.all(by.repeater('photo in feedList'));
+        var query = element(by.model('tagSearch'));
+
+        expect(feedList.count()).toBe(20);
+
+        query.sendKeys('peneer');
+        expect(feedList.count()).toBe(1);
+        
+        var matchedPhotoTitle = element(by.css('.photo-title')).getText();
+        expect(matchedPhotoTitle).toEqual('Peneer Curry with Sweet Potato Fries');
       });
 
     });
