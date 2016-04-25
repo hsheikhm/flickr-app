@@ -76,9 +76,30 @@
 
         query.sendKeys('peneer');
         expect(feedList.count()).toBe(1);
-        
+
         var matchedPhotoTitle = element(by.css('.photo-title')).getText();
         expect(matchedPhotoTitle).toEqual('Peneer Curry with Sweet Potato Fries');
+      });
+
+    });
+
+    describe('Photo detail page', function(){
+
+      beforeEach(function(){
+        browser.get('app/index.html#/feed/photo/0');
+      });
+
+      it("should give user the option to go 'Back' to feed list page", function(){
+        element(by.css('.back-link')).click().then(function(){
+          browser.getLocationAbsUrl().then(function(url){
+            expect(url).toEqual('/feed');
+          });
+        });
+      });
+
+      it("should display the photo's title", function(){
+        var photoTitle = element(by.css('.photo-detail-title')).getText();
+        expect(photoTitle.isPresent()).toBe(true);
       });
 
     });
