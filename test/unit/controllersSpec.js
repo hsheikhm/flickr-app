@@ -24,9 +24,7 @@
 
       beforeEach(inject(function(_$httpBackend_, $rootScope, $controller){
         $httpBackend = _$httpBackend_;
-        $httpBackend.expectJSONP(feedUrl).
-          respond(feedData);
-
+        $httpBackend.expectJSONP(feedUrl).respond(feedData);
         scope = $rootScope.$new();
         ctrl = $controller('FeedListCtrl', {$scope: scope});
       }));
@@ -49,6 +47,10 @@
       it("should create a 'feedList' model that contains an array of all photos", function(){
         $httpBackend.flush();
         expect(scope.feedList).toEqualData(feedData.items);
+      });
+
+      it("should create a default 'tagSearch' model that is undefined", function(){
+        expect(ctrl.tagSearch).toBeUndefined();
       });
 
     });
