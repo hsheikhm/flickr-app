@@ -21,6 +21,17 @@
         expect(photos.count()).toBe(20);
       });
 
+      it("each photo should display its title, author, published date and link to Flickr", function(){
+        var photoTitles = element.all(by.css('.photo-title')).getText();
+        var photoAuthors = element.all(by.css('.photo-author')).getText();
+        var photoDates = element.all(by.css('.photo-date')).getText();
+        var photoLinks = element.all(by.css('.photo-link')).getText();
+        expect(photoTitles.count()).toBe(20);
+        expect(photoAuthors.count()).toBe(20);
+        expect(photoDates.count()).toBe(20);
+        expect(photoLinks.count()).toBe(20);
+      });
+
     });
 
   });
