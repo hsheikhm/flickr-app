@@ -32,6 +32,31 @@
         expect(photoLinks.count()).toBe(20);
       });
 
+      it("clicking on photo's image should take you to the content page of the photo", function(){
+        element.all(by.css('.photo-image')).first().click();
+        browser.getLocationAbsUrl().then(function(url){
+          expect(url).toEqual('/feed/photo/0');
+        });
+      });
+
+      it("clicking on photo's title should take you to the content page of the photo", function(){
+        element.all(by.css('.photo-title')).first().click();
+        browser.getLocationAbsUrl().then(function(url){
+          expect(url).toEqual('/feed/photo/0');
+        });
+      });
+
+      it("clicking on photo's author should take you to author's Flickr profile", function(){
+        element.all(by.css('.photo-author')).first().click().then(function(){
+          browser.ignoreSynchronization = true;
+          browser.getCurrentUrl().then(function(url){
+            var authorID = url.slice(30, 42);
+            expect(url).toEqual('https://www.flickr.com/people/' + authorID);
+          });
+        });
+        browser.ignoreSynchronization = false;
+      });
+
     });
 
   });
