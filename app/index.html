@@ -6,12 +6,15 @@
     <title>Flickr Feed App</title>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/animations.css">
   </head>
   <body>
 
     <main class="main-view">
       <h1 class="flickr-page-title">Flickr Public Feed</h1>
-      <div ng-view></div>
+      <div class="view-outer-frame">
+        <div ng-view class="view-frame"></div>
+      </div>
     </main>
 
     <script src="../bower_components/jquery/dist/jquery.js"></script>
