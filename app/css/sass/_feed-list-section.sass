@@ -31,7 +31,7 @@ a
   +height-width(100%, 100%)
 
 .photo-information-section
-  +height-width(133px, 690px)
+  +height-width(133px, 590px)
   float: right
   margin-top: -134px
 
@@ -59,12 +59,127 @@ a
   padding-left: 19px
   padding-top: 15px
   font-weight: bold
-  font-size: 17px
+  font-size: 14px
 
 .photo-date
-  padding-left: 25px
-  margin-top: 16px
-  font-size: 16px
+  padding-left: 18px
+  margin-top: 15px
+  font-size: 14px
 
 .photo-link
-  @extend .photo-date
+  padding-left: 18px
+  margin-top: 15px
+  font-size: 14px
+
+@media only screen and (max-width: 800px)
+
+  .photo-information-section
+    width: 450px
+
+  .photo-info-row
+    padding-left: 2px
+
+  .photo-author-link
+    margin-left: -241px
+    margin-top: 10px
+
+  .photo-date
+    margin-top: 0px
+    min-width: 240px
+    order: -1
+
+  .photo-link
+    margin-top: 25px
+
+@media only screen and (max-width: 660px)
+
+  .photo-image-section
+    +height-width(85px, 135px)
+
+  .photo-information-section
+    +height-width(85px, 355px)
+    margin-top: -85px
+
+  .photo-title
+    padding-top: 0px
+    font-size: 18px
+
+  .photo-date
+    font-size: 12px
+
+  .photo-author
+    font-size: 12px
+
+  .photo-author-link
+    margin-top: 7px
+
+  .photo-link
+    font-size: 12px
+    margin-top: 23px
+
+@media only screen and (max-width: 510px)
+
+  .search-tag-box
+    font-size: 13px
+    margin-top: -45px
+
+  .search-text
+    padding: 1px
+
+  .photo-image-section
+    +height-width(55px, 105px)
+
+  .photo-information-section
+    +height-width(55px, 265px)
+    margin-top: -55px
+
+  .photo-title
+    font-size: 14px
+    margin-top: 5px
+
+  .photo-date
+    font-size: 10px
+    margin-top: -8px
+
+  .photo-author
+    font-size: 10px
+
+  .photo-author-link
+    margin-top: -9px
+
+  .photo-link
+    font-size: 10px
+    margin-top: 6px
+    padding-left: 12px
+
+@media only screen and (max-width: 380px)
+
+  .search-tag-box
+    font-size: 10px
+    margin-top: -32px
+
+  .photo-information-section
+    +height-width(55px, 200px)
+    margin-top: -55px
+
+  .photo-title
+    padding-left: 10px
+    font-size: 12px
+    margin-top: 7px
+
+  .photo-date
+    font-size: 8px
+    margin-top: -6px
+    margin-left: -10px
+
+  .photo-author
+    font-size: 8px
+
+  .photo-author-link
+    margin-top: -7px
+    margin-left: -241px
+
+  .photo-link
+    font-size: 8px
+    margin-top: 8px
+    padding-left: 8px
