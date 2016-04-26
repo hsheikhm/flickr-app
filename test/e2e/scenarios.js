@@ -102,6 +102,38 @@
         expect(photoTitle.isPresent()).toBe(true);
       });
 
+      it("should display the photo's author", function(){
+        var photoAuthor = element(by.css('.photo-detail-author')).getText();
+        expect(photoAuthor.isPresent()).toBe(true);
+      });
+
+      it("should display the photo's publihed date", function(){
+        var photoDate = element(by.css('.photo-detail-date')).getText();
+        expect(photoDate.isPresent()).toBe(true);
+      });
+
+      it("clicking on photo's author should take you to author's Flickr profile", function(){
+        element(by.css('.photo-detail-author')).click().then(function(){
+          browser.ignoreSynchronization = true;
+          browser.getCurrentUrl().then(function(url){
+            browser.ignoreSynchronization = false;
+            var authorID = url.slice(30);
+            expect(url).toEqual('https://www.flickr.com/people/' + authorID);
+          });
+        });
+      });
+
+      it("clicking on photo's title link should take you to the photo on Flickr", function(){
+        element(by.css('.photo-detail-title')).click().then(function(){
+          browser.ignoreSynchronization = true;
+          browser.getCurrentUrl().then(function(url){
+            browser.ignoreSynchronization = false;
+            var photoID = url.slice(30);
+            expect(url).toEqual('https://www.flickr.com/photos/' + photoID);
+          });
+        });
+      });
+
     });
 
   });
