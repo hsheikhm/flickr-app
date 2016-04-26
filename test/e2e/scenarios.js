@@ -134,6 +134,19 @@
         });
       });
 
+      it("clicking on a photo tag should return user to feed page and filter photos accordingly", function(){
+        element.all(by.css('.photo-detail-tag')).first().getText().then(function(text){
+          var photoTag = text;
+          element.all(by.css('.photo-detail-tag')).first().click().then(function(){
+            browser.getLocationAbsUrl().then(function(url){
+              expect(url).toEqual('/feed/' + photoTag);
+            });
+          });
+          var query = element(by.css('.search-text')).getAttribute('value');
+          expect(query).toEqual(photoTag);
+        });
+      });
+
     });
 
   });
