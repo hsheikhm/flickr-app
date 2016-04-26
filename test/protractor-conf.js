@@ -1,4 +1,5 @@
 exports.config = {
+
   allScriptsTimeout: 11000,
 
   specs: [
@@ -13,7 +14,7 @@ exports.config = {
 
   baseUrl: 'http://localhost:8000/',
 
-  framework: 'jasmine',
+  framework: 'jasmine2',
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
