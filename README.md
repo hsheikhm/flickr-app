@@ -29,3 +29,36 @@ To make the app **responsive** I had set different css values to different [medi
 ### Testing
 
 I had completed and passed all [feature / e2e](https://github.com/hsheikhm/flickr-app/blob/master/test/e2e/scenarios.js) tests using **Protractor** and **Selenium**. As for [unit testing](https://github.com/hsheikhm/flickr-app/tree/master/test/unit) I used **Karma-Jasmine**.
+
+## Directory Structure
+
+```
+├── app/
+│   ├── css/
+│   │   └── sass/
+│   ├── partials/     
+│   ├── js/   
+│   │   ├── app.js
+│   │   ├── controllers.js
+│   │   ├── directives.js
+│   │   ├── filters.js
+│   │   └── services.js
+│   └── index.html
+│   
+├── test/
+│   ├── e2e/
+│   │   └── scenarios.js
+│   ├── unit/  
+│   │   ├── controllersSpec.js
+│   │   ├── filtersSpec.js
+│   │   └── servicesSpec.js
+│   ├── karma.conj.js
+│   └── protractor-conf.js
+│
+├── gruntfile.js
+├── package.json
+├── bower.json
+│
+```
+
+## App Usage and Features
