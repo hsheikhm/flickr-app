@@ -62,3 +62,15 @@ I had completed and passed all [feature / e2e](https://github.com/hsheikhm/flick
 ```
 
 ## App Usage and Features
+
+***User can see list of photos from Flickr, view author's Flickr profile and view photo on Flickr:***
+
+![Feed List Page](https://github.com/hsheikhm/Github-Images/blob/master/flickr-app/feed-list-page.png)
+
+***User can click on the photo to view its content:***
+
+![Photo Detail Page](https://github.com/hsheikhm/Github-Images/blob/master/flickr-app/photo-detail-page.png)
+
+***User can filter photos by tag name:***
+
+![Search by Tag](https://github.com/hsheikhm/Github-Images/blob/master/flickr-app/tag-search.png)
