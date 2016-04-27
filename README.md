@@ -74,3 +74,18 @@ I had completed and passed all [feature / e2e](https://github.com/hsheikhm/flick
 ***User can filter photos by tag name:***
 
 ![Search by Tag](https://github.com/hsheikhm/Github-Images/blob/master/flickr-app/tag-search.png)
+
+## Download Instructions
+
+Follow the below instructions on your terminal to use the app:
+
+```
+$ git clone https://github.com/hsheikhm/flickr-app.git
+$ cd flickr-app
+$ npm install
+$ bower install
+$ npm start
+(On your browser visit: http://localhost:8000/app/#/feed)
+```
+
+#### Author: [Hamza Sheikh](https://github.com/hsheikhm)
