@@ -45,6 +45,10 @@ I had completed and passed all [feature / e2e](https://github.com/hsheikhm/flick
 │   │   └── services.js
 │   └── index.html
 │   
+├── dist/
+│   ├── flickr-app.js
+│   └── flickr-app.min.js
+│
 ├── test/
 │   ├── e2e/
 │   │   └── scenarios.js
