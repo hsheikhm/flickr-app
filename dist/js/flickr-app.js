@@ -16,15 +16,15 @@
       $routeProvider.
         when('/feed', {
           controller: 'FeedListCtrl',
-          templateUrl: 'partials/feed-list.html'
+          templateUrl: '/dist/partials/feed-list.html'
         }).
         when('/feed/:tag_id', {
           controller: 'FeedListCtrl',
-          templateUrl: 'partials/feed-list.html'
+          templateUrl: '/dist/partials/feed-list.html'
         }).
         when('/feed/photo/:photo_id', {
           controller: 'PhotoDetailCtrl',
-          templateUrl: 'partials/photo-detail.html'
+          templateUrl: '/dist/partials/photo-detail.html'
         }).
         otherwise({
           redirectTo: '/feed'
@@ -80,7 +80,7 @@
   flickrAppDirectives.directive("photoDescription", function(){
     return {
       restrict: 'E',
-      templateUrl: 'partials/photo-description.html'
+      templateUrl: '/dist/partials/photo-description.html'
     };
   });
 

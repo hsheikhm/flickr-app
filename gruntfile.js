@@ -11,7 +11,7 @@
         },
         dist: {
           src: ['app/js/*.js'],
-          dest: 'dist/<%= pkg.name %>.js'
+          dest: 'dist/js/<%= pkg.name %>.js'
         }
       },
 
@@ -21,7 +21,7 @@
         },
         dist: {
           files: {
-            'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+            'dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
           }
         }
       },
@@ -40,7 +40,7 @@
       sass: {
         dev: {
           files: {
-            "app/css/<%= pkg.name %>.css" : "app/css/sass/flickr-app.sass"
+            "dist/css/<%= pkg.name %>.css" : "app/css/sass/flickr-app.sass"
           }
         }
       },
@@ -52,7 +52,21 @@
         },
         target: {
           files: {
-            'app/css/<%= pkg.name %>.min.css': ['app/css/<%= pkg.name %>.css', 'app/css/animations.css']
+            'dist/css/<%= pkg.name %>.min.css': ['dist/css/<%= pkg.name %>.css', 'app/css/animations.css']
+          }
+        }
+      },
+
+      htmlmin: {
+        dist: {
+          options: {
+            removeComments: true,
+            collapseWhitespace: true
+          },
+          files: {
+            'dist/partials/feed-list.html': 'app/partials/feed-list.html',
+            'dist/partials/photo-detail.html': 'app/partials/photo-detail.html',
+            'dist/partials/photo-description.html': 'app/partials/photo-description.html'
           }
         }
       },
@@ -75,8 +89,9 @@
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin', 'htmlmin']);
 
   };
 
