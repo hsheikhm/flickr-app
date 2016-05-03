@@ -1,6 +1,6 @@
 node_modules/
 bower_components/
 .sass-cache/
-app/css/master.css
-app/css/master.css.map
+app/css/flickr-app.css
+app/css/flickr-app.css.map
 Potato-Tech-Test.zip
