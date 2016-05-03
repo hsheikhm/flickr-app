@@ -40,7 +40,19 @@
       sass: {
         dev: {
           files: {
-            "app/css/master.css" : "app/css/sass/master.sass"
+            "app/css/<%= pkg.name %>.css" : "app/css/sass/flickr-app.sass"
+          }
+        }
+      },
+
+      cssmin: {
+        options: {
+          shorthandCompacting: false,
+          roundingPrecision: -1
+        },
+        target: {
+          files: {
+            'app/css/<%= pkg.name %>.min.css': ['app/css/<%= pkg.name %>.css', 'app/css/animations.css']
           }
         }
       },
@@ -62,8 +74,9 @@
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'sass', 'cssmin']);
 
   };
 
