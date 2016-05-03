@@ -6,7 +6,7 @@
   flickrAppDirectives.directive("photoDescription", function(){
     return {
       restrict: 'E',
-      templateUrl: 'partials/photo-description.html'
+      templateUrl: '/dist/partials/photo-description.html'
     };
   });
 
