@@ -1,4 +1,4 @@
-# Flickr Feed App
+# Flickr Feed App [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 * [Task](#task)
 * [My Approach](#my-approach)
